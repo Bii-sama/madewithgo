@@ -130,16 +130,16 @@ func main()  {
 // 	fmt.Println("value of i is:", i)
 // }
 
-names := []string {"Bidemi", "Dele", "John", "Mikey", "Draken", "Angelo"}
+
 // sort.Strings(names)
 
 // for i:= 0; i<len(names); i++{
 // 	fmt.Println("the position of ", names[i], "is ", sort.SearchStrings(names,names[i]))
 // }
 
-for index, value := range names{
-	fmt.Printf("the position of %v is %v \n ", value, index)
-}
+// for index, value := range names{
+// 	fmt.Printf("the position of %v is %v \n ", value, index)
+// }
 
 // for _, value := range names{
 // 	fmt.Printf("the position of %v  \n ", value)// using the _ works when we do not want to use a particular variable
@@ -148,18 +148,37 @@ for index, value := range names{
 
 //Booleans and conditionals
 
-age := 45
+// age := 45
 
 // fmt.Println(age <= 50)
 // fmt.Println(age == 50)
 // fmt.Println(age != 50)
 // fmt.Println(age >= 50)
 
-if age < 30 {
-	fmt.Println("Too young")
-}else if age > 45{
-	fmt.Println("Too Old")
-}else{
-	fmt.Println("Just right")
+// if age < 30 {
+// 	fmt.Println("Too young")
+// }else if age > 45{
+// 	fmt.Println("Too Old")
+// }else{
+// 	fmt.Println("Just right")
+// }
+
+
+names := []string {"Bidemi", "Dele", "John", "Mikey", "Draken", "Angelo"}
+
+for index, value := range names {
+   if index == -1{
+    fmt.Println("continuing at position", index)
+	continue
+   }
+
+   if index > 2{
+	fmt.Println("breaking at position", index)
+	break
+   }
+
+   fmt.Printf("the value at position %v is %v \n", index, value)
 }
+
+
 }
