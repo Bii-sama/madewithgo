@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	// "sort"
+	
 )
 
 func main()  {
@@ -92,15 +93,73 @@ func main()  {
 //    fmt.Println(rangeTwo)
 //    fmt.Println(rangeThree)
 
-greetings  := "Hello, Takemitchy"
+// greetings  := "Hello, Takemitchy"
 // fmt.Println(strings.Contains(greetings, "Eren"))
 // fmt.Println(strings.ReplaceAll(greetings, "Takemitchy", "Eren"))
 // fmt.Println(strings.ToUpper(greetings))
-fmt.Println(strings.Split(greetings, ""))//This technically converts to array
+// fmt.Println(strings.Split(greetings, " "))//This technically converts to array
 
 //this strings package functions do not replace the original value. It just returns a new/different one. See below
 // fmt.Println("original value:", greetings)
 // fmt.Println(strings.Index(greetings, "chy"))
 
 
+// numbers := []int{45,98,37,26,10,89,73,62,41,50}
+
+// sort.Ints(numbers)//The sort package/method will always alter the original slice
+// fmt.Println(numbers)
+
+// findIndex := sort.SearchInts(numbers, 50)
+// fmt.Println(findIndex)
+
+// names := []string {"Bidemi", "Dele", "John", "Mikey", "Draken", "Angelo"}
+
+// sort.Strings(names)
+// fmt.Println(names)
+
+// fmt.Println(sort.SearchStrings(names, "Draken"))
+
+// x := 0
+
+// for x < 5{
+// 	fmt.Println("value of x is:", x) //JavaScript while loop
+// 	x++
+// }
+
+// for i:= 0; i<10; i++{
+// 	fmt.Println("value of i is:", i)
+// }
+
+names := []string {"Bidemi", "Dele", "John", "Mikey", "Draken", "Angelo"}
+// sort.Strings(names)
+
+// for i:= 0; i<len(names); i++{
+// 	fmt.Println("the position of ", names[i], "is ", sort.SearchStrings(names,names[i]))
+// }
+
+for index, value := range names{
+	fmt.Printf("the position of %v is %v \n ", value, index)
+}
+
+// for _, value := range names{
+// 	fmt.Printf("the position of %v  \n ", value)// using the _ works when we do not want to use a particular variable
+// }
+
+
+//Booleans and conditionals
+
+age := 45
+
+// fmt.Println(age <= 50)
+// fmt.Println(age == 50)
+// fmt.Println(age != 50)
+// fmt.Println(age >= 50)
+
+if age < 30 {
+	fmt.Println("Too young")
+}else if age > 45{
+	fmt.Println("Too Old")
+}else{
+	fmt.Println("Just right")
+}
 }
