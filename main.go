@@ -2,11 +2,82 @@ package main
 
 import (
 	"fmt"
+	"math"
+	"strings"
 	// "sort"
-	
 )
 
+
+func sayHello(name string)  {
+	fmt.Printf("Hello, %v \n", name)
+}
+
+func sayGoodBye(name string)  {
+	fmt.Printf("Goodbye, %v \n", name)
+}
+
+func cycleNames(n []string, f func(string))  {
+	for _, value := range n{
+		f(value)
+	}
+}
+
+func circleArea(r float64) float64 {
+	return math.Pi * r * r
+}
+
+
+func getInitials(n string) (string, string) {
+	s := strings.ToUpper(n)
+
+	nameSlice := strings.Split(s, " ")
+
+	var initials []string
+
+	for _, v := range nameSlice {
+		initials = append(initials, v[:1])
+	}
+
+	if len(initials) > 1 {
+		return initials[0], initials[1]
+	}
+	return initials[0], "_"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 func main()  {
+
+	names := []string {"Bidemi", "Dele", "John", "Mikey", "Draken", "Angelo"}
+
+	cycleNames(names, sayHello)
+	cycleNames(names, sayGoodBye)
+
+
+	// sayHello("Mikasa")
+	sayGoodBye("Eren")
+
+	a1 := circleArea(15.90)
+	a2 := circleArea(10.90)
+
+	fmt.Printf("the areas are %0.2f and %0.2f \n", a1,a2)
+
+	fn, sn := getInitials("Eren Yaeger")
+	fn2, sn2 := getInitials("Kiba")
+
+	fmt.Println(fn, sn)
+	fmt.Println(fn2, sn2)
+	
 // 	// fmt.Println("Hello, World")
 
 // 	// var name string = "Erwin"
@@ -164,21 +235,21 @@ func main()  {
 // }
 
 
-names := []string {"Bidemi", "Dele", "John", "Mikey", "Draken", "Angelo"}
+// names := []string {"Bidemi", "Dele", "John", "Mikey", "Draken", "Angelo"}
 
-for index, value := range names {
-   if index == -1{
-    fmt.Println("continuing at position", index)
-	continue
-   }
+// for index, value := range names {
+//    if index == -1{
+//     fmt.Println("continuing at position", index)
+// 	continue
+//    }
 
-   if index > 2{
-	fmt.Println("breaking at position", index)
-	break
-   }
+//    if index > 2{
+// 	fmt.Println("breaking at position", index)
+// 	break
+//    }
 
-   fmt.Printf("the value at position %v is %v \n", index, value)
-}
+//    fmt.Printf("the value at position %v is %v \n", index, value)
+// }
 
 
 }
