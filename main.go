@@ -34,11 +34,21 @@ func promptOptions(b bill)  {
 
 	switch opt{
 	case "a":
-		fmt.Println("I chose a")
+       name, _ := getInput("Item Name: ", reader)
+	   price, _ := getInput("Item Amount: ", reader)
+		fmt.Println(name, price)
+
+
+	case "t":
+		tip, _ := getInput("Tip ($): ", reader)
+		fmt.Println(tip)
+
+
 	case "s":
 		fmt.Println("I chose s")
-	case "t":
-		fmt.Println("I chose t")
+	default:
+		fmt.Println("That is not a valid option")
+		promptOptions(b)
 	}
 
 	// fmt.Println(opt)
@@ -52,7 +62,7 @@ func main()  {
 	myBill := createBill()
 	promptOptions(myBill)
 
-	fmt.Println(myBill)
+	// fmt.Println(myBill)
 	
 }
 
