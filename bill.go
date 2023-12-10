@@ -26,7 +26,7 @@ func newBill(name string)bill{
 
 //Receiver functions: These are functions tha work with a struct
 
-func (b bill)format() string  {
+func (b *bill)format() string  {
 	
 	fs := "Bill breakdown: \n"
 
@@ -38,9 +38,9 @@ func (b bill)format() string  {
 
 	}
 
-	fs += fmt.Sprintf("%-25v....%0.2f", "tip:", b.tip)
+	fs += fmt.Sprintf("%-25v....%0.2f \n", "tip:", b.tip)
 
-	fs += fmt.Sprintf("%-25v....%0.2f", "total:", total)
+	fs += fmt.Sprintf("%-25v....%0.2f", "total:", total+b.tip)
 
 	return fs
 
